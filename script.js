@@ -23,6 +23,14 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
   })
   .then(data => {
     console.log(data);
+
+    const valueImg = data.image.small;
+    document.querySelector("#cryptoImg").src = valueImg
+    document.querySelector("#crypto").textContent = data.name
+
+    document.querySelector("#price").textContent = `🎯: ${data.market_data.current_price.usd}`
+    document.querySelector("#all-time-high").textContent = `👆: ${data.market_data.high_24h.usd}`
+    document.querySelector("#all-time-low").textContent = `👇: ${data.market_data.low_24h.usd}`
   })
   .catch(err => {
     console.log("The datas are not available, please come again soon!");

@@ -33,3 +33,25 @@ main{
 h1.time{
   align-self: center;
 }
+#cryptos{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 10px;
+  margin: 5px;
+  font-size: 1.3rem;
+}
+#cryptoImg{
+  width: 60px;
+}
+#crypto-values{
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  margin-top: 20px;
+}
+#price,
+#all-time-high,
+#all-time-low{
+  margin: 0;
+}
