@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+}
+body {
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    text-shadow: 0px 0px 20px #aaaaaa;
+}
+#author{
+  background-color: rgb(209, 199, 199);
+  width: fit-content;
+  padding: 3px 10px;
+  margin: 0;
+}
+main{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#top{
+  display: flex;
+  justify-content: space-between;
+}
+h1.time{
+  align-self: center;
+}
