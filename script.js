@@ -42,21 +42,25 @@ function getCurrentTime(){
 }
 setInterval(getCurrentTime, 1000)
 
-navigator.geolocation.getCurrentPosition(position => {
-    console.log(position)
-    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
-      .then(response => {
-        if (!response.ok) {
-          throw Error("No datas found")
-        }
-        return response.json()
-      })
-      .then(data =>{
-        console.log(data);
-      })
-      .catch(err => {
-        console.log("datas not found" , err);
-      })
+navigator.geolocation.getCurrentPosition(async position => {
+    console.log(position);
+    
+    const res = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    if (!res.ok) {
+      throw Error("No datas found")
+    }
+    const data = await res.json();
+    console.log(data)
+
+    const iconURL = ` https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    document.querySelector("#weather-part").innerHTML = `
+      <img src="${iconURL}" class="icon">
+      <p class="temp">${Math.round(data.main.temp)}º</p>
+      <p class="city">${data.name}</p>
+    `
+      // .catch(err => {
+      //   console.log("datas not found" , err);
+      // })
 });
 
 //.catch is used when the promise is rejected in .then blocks

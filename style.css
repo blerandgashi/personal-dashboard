@@ -32,6 +32,7 @@ main{
 }
 h1.time{
   align-self: center;
+  font-size: 3rem;
 }
 #cryptos{
   display: flex;
@@ -48,10 +49,31 @@ h1.time{
   position: absolute;
   top: 60px;
   left: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #price,
 #all-time-high,
 #all-time-low{
   margin: 0;
+}
+#weather{
+  display: flex;
+  align-items: center;
+}
+.icon{
+  position: absolute;
+  top: -15px;
+  right: 50px;
+}
+.temp{
+  font-size: 50px;
+  position: absolute;
+  top: -45px;
+  right: 0px;
+}
+.city{
+  font-size: 20px;
+  position: absolute;
+  top: 45px;
+  right: 25px;
 }
